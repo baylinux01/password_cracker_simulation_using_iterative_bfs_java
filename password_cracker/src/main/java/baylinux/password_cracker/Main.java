@@ -21,11 +21,72 @@ public class Main
 //  	  findCombinationsRecursivelyWithDFS(null,null, 48, 50, 1, 3);
 //yukarıdaki kodlarla bu uygulamanın yazılmasında kullanılan algoritmaları deneyebilirsiniz(Recursive BFS hariç)
     	
-        String password="1258";
-        crackPassword(48,57,3,4,password);     
+        String password="854765";
+        crackPasswordWithIterativeDFS(48,57,1,6,password);     
     }
-    
-    public static void crackPassword(int asciiStart, int asciiEnd, int minDigits, int maxDigits,String password) 
+    public static void crackPasswordWithIterativeDFS(int asciiStart, int asciiEnd, int minDigits, int maxDigits,String password) 
+    {
+    	List<String> results = new ArrayList<String>();
+        
+        List<String> alphabet = new ArrayList<String>();
+        for (int i = asciiStart; i <= asciiEnd; i += 1) 
+        {
+            alphabet.add(String.valueOf((char) i));
+        }
+
+        LinkedList<String> stack = new LinkedList<String>();
+
+        for (int i = alphabet.size() - 1; i >= 0; i-=1) 
+        {
+            stack.push(alphabet.get(i)); 
+        }
+
+        int attempt=0;
+        while (!stack.isEmpty()) 
+        {
+            
+            String currentWord = stack.pop();
+            
+            
+            if (currentWord.length() >= minDigits) 
+            {
+            	if(currentWord.equals(password))
+            	{
+            		attempt+=1;
+            		System.out.println("Password cracked in attempt: "+attempt+" and found as: "+currentWord);
+            		return;
+            	}
+            	else
+            	{
+            		attempt+=1;
+            		System.out.println("Attempt: "+attempt+" and the word tried is: "+currentWord);
+            		
+            	}
+            	//results.add(currentWord);
+            }
+
+            if (currentWord.length() < maxDigits) 
+            {
+                for (int i = alphabet.size() - 1; i >= 0; i-=1) 
+                {
+                    String newWord = currentWord + alphabet.get(i);
+                    stack.push(newWord);
+                }
+            }
+        }
+
+       
+        System.out.println("Toplam " + results.size() + " kombinasyon bulundu (Iterative DFS).");
+        for(String s : results) 
+        {
+            System.out.println(s);
+        }
+        
+
+     
+      
+    }
+    public static void crackPasswordWithIterativeBFS(int asciiStart, int asciiEnd, int minDigits, int maxDigits,String password) 
     {
     	
         List<String> alphabet = new ArrayList<String>();

@@ -6,7 +6,13 @@ bir şifre kırma simulasyonu olarak tasarlanmıştır
 
 bu uygulamanın yapımında yararlanılan BFS ve DFS algoritmaları java fonksiyonu olarak aşağıda ayrıca mevcuttur
 
-crackPassword metodu ise bu algoritmalardan daha doğrusu direkt iterative BFS algoritmasından yararlanarak oluşturulmuştur
+crackPasswordWithIterativeDFS ve crackPasswordWithIterativeBFS metodları ise bu algoritmalardan yararlanarak oluşturulmuştur
+
+Ancak BFS algoritması DFS'e kıyasla ram'i çok daha fazla kullanmaktadır ve bu nedenle rami doldurup programın çökme ihtimali BFS için daha yüksektir.
+
+Buna karşın BFS algoritmasının avantajı çıktıları daha sıralı vermesidir.
+
+DFS ise daha az ram kullandığı için daha güçlüdür.
 
 ilk iki parametre taranacak karakterlerin ascii numaralarının alt ve üst limitleri(bakınız ascii table)
 
