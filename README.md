@@ -14,6 +14,8 @@ Buna karşın BFS algoritmasının avantajı çıktıları daha sıralı vermesi
 
 DFS ise daha az ram kullandığı için daha güçlüdür.
 
+Kullanılan fonksiyonlarda;
+
 ilk iki parametre taranacak karakterlerin ascii numaralarının alt ve üst limitleri(bakınız ascii table)
 
 3üncü ve 4üncü parametre denenmek istenen değerin minimum ve maksimum usunlukları
