@@ -3,6 +3,7 @@ Java ile iterative bfs kullanarak şifre kırma simulasyonu konsol uygulaması
 
 bu küçük konsol uygulaması BFS ve DFS algoritmalarını denemek için 
 bir şifre kırma simulasyonu olarak tasarlanmıştır
+
 bu uygulamanın yapımında yararlanılan BFS ve DFS algoritmaları java fonksiyonu olarak aşağıda ayrıca mevcuttur
 crackPassword metodu ise bu algoritmalardan daha doğrusu direkt iterative BFS algoritmasından yararlanarak oluşturulmuştur
 ilk iki parametre taranacak karakterlerin ascii numaralarının alt ve üst limitleri(bakınız ascii table)
