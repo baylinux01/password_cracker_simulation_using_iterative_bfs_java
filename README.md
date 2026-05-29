@@ -1,5 +1,5 @@
 # password_cracker_simulation_using_iterative_bfs_java
-Java ile iterative bfs kullanarak şifre kırma simulasyonu uygulaması
+Java ile iterative bfs kullanarak şifre kırma simulasyonu konsol uygulaması
 
 bu küçük konsol uygulaması BFS ve DFS algoritmalarını denemek için 
 bir şifre kırma simulasyonu olarak tasarlanmıştır
