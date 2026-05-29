@@ -15,8 +15,14 @@ public class Main
 {
     public static void main( String[] args )
     {
+//  	  findCombinationsIterativelyWithBFS(48, 50, 1, 3);
+//  	  findCombinationsIterativelyWithDFS(48, 50, 1, 3);
+////    findCombinationsRecursivelyWithBFS(null,null, 48, 50, 1, 3);
+//  	  findCombinationsRecursivelyWithDFS(null,null, 48, 50, 1, 3);
+//yukarıdaki kodlarla bu uygulamanın yazılmasında kullanılan algoritmaları deneyebilirsiniz(Recursive BFS hariç)
+    	
         String password="1258";
-        crackPassword(48,57,3,4,password);   
+        crackPassword(48,57,3,4,password);     
     }
     
     public static void crackPassword(int asciiStart, int asciiEnd, int minDigits, int maxDigits,String password) 
@@ -106,13 +112,25 @@ public class Main
         }
 
      
-        System.out.println("Toplam " + results.size() + " kombinasyon bulundu (Iteratif).");
+        System.out.println("Toplam " + results.size() + " kombinasyon bulundu (Iterative BFS).");
         
         for(int i=0; i<Math.min(20, results.size()); i+=1) 
         {
             System.out.println(results.get(i));
         }
     }
+    
+//    public static void findCombinationsRecursivelyWithBFS(List<String> results,String currentWord,int asciiStart, int asciiEnd, int minDigits, int maxDigits) 
+//    {
+//    	
+//    	
+//        
+//        
+//
+//     
+//       
+//    }
+    
     public static void findCombinationsIterativelyWithDFS(int asciiStart, int asciiEnd, int minDigits, int maxDigits) 
     {
         List<String> results = new ArrayList<String>();
@@ -153,7 +171,7 @@ public class Main
         }
 
        
-        System.out.println("Toplam " + results.size() + " kombinasyon bulundu (Iteratif DFS).");
+        System.out.println("Toplam " + results.size() + " kombinasyon bulundu (Iterative DFS).");
         for(String s : results) 
         {
             System.out.println(s);
@@ -161,6 +179,18 @@ public class Main
     }
     public static void findCombinationsRecursivelyWithDFS(List<String> current,List<String> results,int asciiStart, int asciiEnd,int minDigits, int maxDigits)
     {
+    	 if (results == null) 
+    	 {
+             results = new ArrayList<String>();
+         }
+
+         boolean isFirstCall=false;
+         if (current == null) 
+         {
+             current = new ArrayList<String>();
+             isFirstCall=true;
+         }
+         
     	List<String> alphabet=new ArrayList<String>();
     	for(int i=asciiStart;i<=asciiEnd;i+=1)
     	{
@@ -178,6 +208,14 @@ public class Main
     		}
     		
     		current.remove(current.size()-1);
+    	}
+    	if(isFirstCall==true)
+    	{
+    		System.out.println("Toplam " + results.size() + " kombinasyon bulundu (Recursive DFS).");
+            for(String s : results) 
+            {
+                System.out.println(s);
+            }
     	}
     	
     }
